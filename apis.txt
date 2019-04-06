@@ -1,0 +1,65 @@
+
+
+#############################################
+I accidentally make a change in the order of the exercises, I uploaded a file then deleted it, and then uploaded a file that I did not delete.
+
+#############################################
+
+
+
+
+
+
+
+
+1.
+
+curl -H "Authorization: token  my_token " https://api.github.com/user
+
+
+2.
+
+curl -X POST  -H "Authorization: token  my_token " https://api.github.com/user/repos  -d '{"name":"Github_api", "auto_init": true, "description": "Tutorial for GitHub API ","private": false}'
+
+3.
+
+PATCH /repos/:owner/:repo
+
+curl -X PATCH  -H "Authorization: token  my_token " https://api.github.com/repos/hbendeguz/Github_api  -d '{"name":"Github_api" ,"homepage":"hbendeguz.web.elte.hu", "description":"The description could be changed"}'
+
+4.
+
+PUT /repos/:owner/:repo/contents/:path
+
+curl -X PUT  -H "Authorization: token  my_token " https://api.github.com/repos/hbendeguz/Github_api/contents/new_file  -d '{"message": "commit for the repository", "content" : U05BUFNIT1RfMC43Ck9NRUdBX0xBTUJEQSAyCg==}'
+
+U05BUFNIT1RfMC43Ck9NRUdBX0xBTUJEQSAyCg==
+
+
+5.
+
+GET /repos/:owner/:repo/git/trees/:tree_sha
+
+curl -H "Authorization: token  my_token " https://api.github.com/repos/hbendeguz/Github_api/git/trees/ecf86f26ce2a9aec593959780357b1bd9d335ff0
+
+
+6.
+
+DELETE /repos/:owner/:repo/contents/:path
+
+curl -X DELETE  -H "Authorization: token  my_token " https://api.github.com/repos/hbendeguz/Github_api/contents/new_file  -d '{"message": "deleting the file", "sha" : "679631c673913d5358d113ddbaa3f4c3864e9b92"}'
+
+
+7 .
+
+
+curl -X PUT  -H "Authorization: token  my_token " https://api.github.com/repos/hbendeguz/Github_api/contents/new_file  -d '{"message": "2nd commit for the repository", "content" : "U05BUFNIT1RfMC43Ck9NRUdBX0xBTUJEQSAyCg=="}'
+
+
+8. 
+
+PUT /repos/:owner/:repo/collaborators/:username
+
+curl -X PUT  -H "Authorization: token  my_token " https://api.github.com/repos/hbendeguz/Github_api/collaborators/jegesm -d '{"permission": "push"}'
+
+
